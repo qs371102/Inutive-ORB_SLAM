@@ -111,6 +111,8 @@ int main(int argc, char* argv[]) {
 
   ORB_SLAM2::System SLAM(pathToVocabulary, pathToSettings,
                          ORB_SLAM2::System::RGBD, NULL, &map, &voc);
+  if (ret == 0 && load_map)
+    SLAM.ActivateLocalizationMode();
   cv::Mat im;
   double tframe = 0;
   Inuitive dev;

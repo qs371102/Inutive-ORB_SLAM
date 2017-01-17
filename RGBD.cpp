@@ -22,6 +22,8 @@
 using namespace cv;
 using namespace std;
 
+//#define USE_MESSAGE_QUEUE
+#define TIME_SPAN 600
 int PI = 3.141592654;
 
 float* Matrix_Eulerian_Angle(Mat Rmat) {
@@ -47,6 +49,7 @@ float* Matrix_Eulerian_Angle(Mat Rmat) {
 }
 
 int main(int argc, char* argv[]) {
+#ifdef USE_MESSAGE_QUEUE
   //--------------message queue------------
   mqd_t mq;
   struct mq_attr attr;
@@ -61,8 +64,12 @@ int main(int argc, char* argv[]) {
   /* create the message queue */
   mq = mq_open(QUEUE_NAME, O_CREAT | O_RDONLY, 0644, &attr);
   CHECK((mqd_t)-1 != mq);
-  //----------------------------------------
+//----------------------------------------
+#else
+  bool map_saved = false;
+#endif
   bool use_imu = false;
+
   int load_map = 0;
 
   int pid = -1;
@@ -125,7 +132,8 @@ int main(int argc, char* argv[]) {
   cv::Mat Rgb;
   cv::Mat Depth;
   std::vector<double> imu_data;
-
+  int interval = TIME_SPAN;
+  double time_span = 0;
   if (!dev.Start())
     dev.Stop();
   std::cout << "inutive open sucess!" << std::endl;
@@ -198,14 +206,13 @@ int main(int argc, char* argv[]) {
           std::chrono::duration_cast<std::chrono::duration<double>>(t2 - t1)
               .count();
 
-      // Wait to load the next frame
-      // cout << "fps:" << 1.0 / ttrack << endl << endl;
-      //------------------------------------
-      // cout << "message queue!" << endl;
+// Wait to load the next frame
+// cout << "fps:" << 1.0 / ttrack << endl << endl;
+//------------------------------------
+// cout << "message queue!" << endl;
+#ifdef USE_MESSAGE_QUEUE
       ssize_t bytes_read;
-
       /* receive the message */
-
       struct timespec tm;
       clock_gettime(CLOCK_REALTIME, &tm);
       tm.tv_nsec += 10;
@@ -223,7 +230,17 @@ int main(int argc, char* argv[]) {
       } else {
         // std::cout << "no data" << std::endl;
       }
-      //------------------------------------
+//------------------------------------
+#else
+      time_span += ttrack;
+      if (time_span > interval && !map_saved) {
+        time_span = 0;
+        std::cout << "save map" << std::endl;
+        SLAM.SaveMap(map_file);
+        SLAM.ActivateLocalizationMode();
+        map_saved = true;
+      }
+#endif
     } else {
       // cout << "Get RGB Depth Error" << endl;
     }

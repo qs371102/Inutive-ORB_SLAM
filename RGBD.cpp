@@ -68,7 +68,7 @@ int main(int argc, char* argv[]) {
   int pid = -1;
   if (argc == 3) {
     pid = *argv[1];
-    load_map = *argv[2];
+    load_map = *argv[2] - '0';
   } else {
     std::cout << "argc != 3" << std::endl;
     return 0;
@@ -82,7 +82,7 @@ int main(int argc, char* argv[]) {
 
   ORB_SLAM2::Camera::Load(pathToSettings);
 
-  ORB_SLAM2::PangolinViewer viewer(pathToSettings);
+  // ORB_SLAM2::PangolinViewer viewer(pathToSettings);
 
   ORB_SLAM2::Map map;
 
@@ -92,6 +92,7 @@ int main(int argc, char* argv[]) {
 
   ret = stat(map_file.c_str(), &info);
 
+  cout << "ret:" << ret << " load_map:" << load_map << std::endl;
   if (ret == 0) {
     if (load_map) {
       cout << "map loading...." << endl;
@@ -219,7 +220,7 @@ int main(int argc, char* argv[]) {
           std::cout << "bytes read:" << bytes_read << std::endl;
         }
       } else {
-        std::cout << "no data" << std::endl;
+        // std::cout << "no data" << std::endl;
       }
       //------------------------------------
     } else {
@@ -250,7 +251,7 @@ int main(int argc, char* argv[]) {
         std::cout << "IMU Error." << std::endl;
       }
     }
-    usleep(100);
+    usleep(1000);
   }
   SLAM.Shutdown();
   // SLAM.SaveMap(map_file);

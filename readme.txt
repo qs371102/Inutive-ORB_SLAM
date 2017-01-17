@@ -1,0 +1,4 @@
+和之前一样，重新编译带map版的orb_slam2,拷贝生成的几个库替换掉lib内的库。传数据部分，这个文件夹内的CPP,现在传的字符串，把机器人上RGBD.cpp while循环内的拷贝过来就是传float了。
+poine_orbslam2_04_07_16.tgz是带map版的orb_slam2，参考ORB_SLAM2_Aprat_install.txt安装。opencv3需要调整很多库。
+opencv2，ubuntu14 可参考使用 ORB_SLAM2_MAP 编译。
+

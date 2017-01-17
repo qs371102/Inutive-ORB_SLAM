@@ -1,0 +1,79 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+CALI_NUM	process.h	24;"	d
+ImageConverter	process.h	/^class ImageConverter$/;"	c
+Int64	process.h	/^typedef long 			Int64;$/;"	t
+OPENCV_DEPTH_WINDOW	process.h	/^static const std::string OPENCV_DEPTH_WINDOW = "depth window";$/;"	v
+OPENCV_WINDOW	process.h	/^static const std::string OPENCV_WINDOW = "Image window";$/;"	v
+PROCESS_H_	process.h	2;"	d
+SIZE	process.h	23;"	d
+UInt64	process.h	/^typedef unsigned long 	UInt64;$/;"	t
+cali_mat	process.h	/^	Eigen::Matrix3d cali_mat[CALI_NUM],imu_att;$/;"	m	class:ImageConverter
+cali_orient	process.h	/^	Eigen::Quaternion<double> cali_orient[CALI_NUM];$/;"	m	class:ImageConverter
+camera	process.h	/^	CAMERA_INTRINSIC_PARAMETERS camera;$/;"	m	class:ImageConverter
+ch	process.h	/^  unsigned char ch;$/;"	m	class:ImageConverter
+cv_depth_ptr	process.h	/^	cv_bridge::CvImagePtr cv_ptr,cv_depth_ptr;$/;"	m	class:ImageConverter
+cv_ptr	process.h	/^	cv_bridge::CvImagePtr cv_ptr,cv_depth_ptr;$/;"	m	class:ImageConverter
+depth_image_pub_	process.h	/^  image_transport::Publisher image_pub_,depth_image_pub_;$/;"	m	class:ImageConverter
+descriptor	process.h	/^	string descriptor;$/;"	m	class:ImageConverter
+detecter	process.h	/^	string detecter;$/;"	m	class:ImageConverter
+drone_pose	process.h	/^  ros::Subscriber drone_pose;$/;"	m	class:ImageConverter
+first_flag	process.h	/^  bool recieve_flag_depth,recieve_flag_rgb,first_flag;$/;"	m	class:ImageConverter
+frame	process.h	/^  FRAME frame[CALI_NUM],frame_new,frame_pre;$/;"	m	class:ImageConverter
+frame_new	process.h	/^  FRAME frame[CALI_NUM],frame_new,frame_pre;$/;"	m	class:ImageConverter
+frame_pre	process.h	/^  FRAME frame[CALI_NUM],frame_new,frame_pre;$/;"	m	class:ImageConverter
+image_depth_sub_	process.h	/^  image_transport::Subscriber image_depth_sub_;$/;"	m	class:ImageConverter
+image_pub_	process.h	/^  image_transport::Publisher image_pub_,depth_image_pub_;$/;"	m	class:ImageConverter
+image_sub_	process.h	/^  image_transport::Subscriber image_sub_;$/;"	m	class:ImageConverter
+imu_att	process.h	/^	Eigen::Matrix3d cali_mat[CALI_NUM],imu_att;$/;"	m	class:ImageConverter
+it_	process.h	/^  image_transport::ImageTransport it_;$/;"	m	class:ImageConverter
+nh_	process.h	/^  ros::NodeHandle nh_;$/;"	m	class:ImageConverter
+orientation	process.h	/^	geometry_msgs::Quaternion orientation;$/;"	m	class:ImageConverter
+pd	process.h	/^	ParameterReader pd;$/;"	m	class:ImageConverter
+pose	process.h	/^  geometry_msgs::Pose pose;$/;"	m	class:ImageConverter
+read_imu	process.h	/^  pthread_t read_tid,read_imu;$/;"	m	class:ImageConverter
+read_tid	process.h	/^  pthread_t read_tid,read_imu;$/;"	m	class:ImageConverter
+recieve_flag_depth	process.h	/^  bool recieve_flag_depth,recieve_flag_rgb,first_flag;$/;"	m	class:ImageConverter
+recieve_flag_rgb	process.h	/^  bool recieve_flag_depth,recieve_flag_rgb,first_flag;$/;"	m	class:ImageConverter
+save_count	process.h	/^  int save_count;$/;"	m	class:ImageConverter
+B460800	serial_port.h	18;"	d
+B921600	serial_port.h	22;"	d
+SERIAL_PORT_CLOSED	serial_port.h	27;"	d
+SERIAL_PORT_ERROR	serial_port.h	28;"	d
+SERIAL_PORT_H_	serial_port.h	2;"	d
+SERIAL_PORT_OPEN	serial_port.h	26;"	d
+Serial_Port	serial_port.h	/^class Serial_Port {$/;"	c
+baudrate	serial_port.h	/^	int baudrate;$/;"	m	class:Serial_Port
+cp	serial_port.h	/^	uint8_t          cp;$/;"	m	class:Serial_Port
+debug	serial_port.h	/^	bool debug;$/;"	m	class:Serial_Port
+fd	serial_port.h	/^	int fd;$/;"	m	class:Serial_Port
+lock	serial_port.h	/^	pthread_mutex_t lock;$/;"	m	class:Serial_Port
+status	serial_port.h	/^	int status;$/;"	m	class:Serial_Port
+uart_name	serial_port.h	/^	char *uart_name;$/;"	m	class:Serial_Port
+uint8_t	serial_port.h	/^typedef unsigned char uint8_t;$/;"	t
+CAMERA_INTRINSIC_PARAMETERS	slamBase.h	/^struct CAMERA_INTRINSIC_PARAMETERS $/;"	s
+FRAME	slamBase.h	/^struct FRAME$/;"	s
+ParameterReader	slamBase.h	/^    ParameterReader( string filename="\/home\/zim\/catkin_ws\/src\/calibration\/parameters.txt" )$/;"	f	class:ParameterReader
+ParameterReader	slamBase.h	/^class ParameterReader$/;"	c
+RESULT_OF_PNP	slamBase.h	/^struct RESULT_OF_PNP$/;"	s
+__SLAMBASE_H__	slamBase.h	3;"	d
+cx	slamBase.h	/^    double cx, cy, fx, fy, scale;$/;"	m	struct:CAMERA_INTRINSIC_PARAMETERS
+cy	slamBase.h	/^    double cx, cy, fx, fy, scale;$/;"	m	struct:CAMERA_INTRINSIC_PARAMETERS
+data	slamBase.h	/^    map<string, string> data;$/;"	m	class:ParameterReader
+depth	slamBase.h	/^    cv::Mat rgb, depth; \/\/该帧对应的彩色图与深度图$/;"	m	struct:FRAME
+desp	slamBase.h	/^    cv::Mat desp;       \/\/特征描述子$/;"	m	struct:FRAME
+frameID	slamBase.h	/^    int frameID; $/;"	m	struct:FRAME
+fx	slamBase.h	/^    double cx, cy, fx, fy, scale;$/;"	m	struct:CAMERA_INTRINSIC_PARAMETERS
+fy	slamBase.h	/^    double cx, cy, fx, fy, scale;$/;"	m	struct:CAMERA_INTRINSIC_PARAMETERS
+getData	slamBase.h	/^    string getData( string key )$/;"	f	class:ParameterReader
+getDefaultCamera	slamBase.h	/^inline static CAMERA_INTRINSIC_PARAMETERS getDefaultCamera()$/;"	f
+inliers	slamBase.h	/^    int inliers;$/;"	m	struct:RESULT_OF_PNP
+kp	slamBase.h	/^    vector<cv::KeyPoint> kp; \/\/关键点$/;"	m	struct:FRAME
+rgb	slamBase.h	/^    cv::Mat rgb, depth; \/\/该帧对应的彩色图与深度图$/;"	m	struct:FRAME
+rvec	slamBase.h	/^    cv::Mat rvec, tvec;$/;"	m	struct:RESULT_OF_PNP
+scale	slamBase.h	/^    double cx, cy, fx, fy, scale;$/;"	m	struct:CAMERA_INTRINSIC_PARAMETERS
+tvec	slamBase.h	/^    cv::Mat rvec, tvec;$/;"	m	struct:RESULT_OF_PNP

@@ -1,0 +1,28 @@
+sudo apt-get install libglew-dev
+sudo apt-get install libeigen3-dev libsuitesparse-dev libqt4-dev qt4-qmake
+
+opengl:
+sudo apt-get install libgl1-mesa-dev  
+sudo apt-get install libglu1-mesa-dev 
+sudo apt-get install libglut-dev 
+
+
+git clone https://github.com/stevenlovegrove/Pangolin.git
+cd Pangolin
+mkdir build
+cd build
+cmake ..
+make -j 
+
+
+
+modify  if you download from web
+   vvvvvv cmakeList vvvvv
+find_package(OpenCV  REQUIRED)
+find_package(Eigen3  REQUIRED)
+   ^^^^^cmakeList ^^^^^
+System.h  --add --> #include<unistd.h>
+
+
+/home/robot/Downloads/ORB_SLAM2-master/Thirdparty/g2o/g2o/solvers/linear_solver_eigen.h   lin56--->int
+

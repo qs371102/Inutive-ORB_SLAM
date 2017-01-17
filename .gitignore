@@ -1,5 +1,5 @@
 #Build
-build
+/build
 # Compiled Object files
 *.slo
 *.lo
@@ -11,7 +11,7 @@ build
 *.pch
 
 # Compiled Dynamic libraries
-*.so
+#*.so
 *.dylib
 *.dll
 

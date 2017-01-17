@@ -69,6 +69,7 @@ int main(int argc, char* argv[]) {
   if (argc == 3) {
     pid = *argv[1];
     load_map = *argv[2] - '0';
+    std::cout << pid << "___________________" << load_map << std::endl;
   } else {
     std::cout << "argc != 3" << std::endl;
     return 0;
